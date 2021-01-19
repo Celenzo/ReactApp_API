@@ -1,0 +1,26 @@
+{
+  "name": "reactapp_api",
+  "version": "1.0.0",
+  "description": "API For a small conv react app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Celenzo/ReactApp_API.git"
+  },
+  "author": "Celenzo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Celenzo/ReactApp_API/issues"
+  },
+  "homepage": "https://github.com/Celenzo/ReactApp_API#readme",
+  "dependencies": {
+    "@hapi/boom": "^9.1.1",
+    "@hapi/hapi": "^20.0.3",
+    "@hapi/joi": "^17.1.1",
+    "common-env": "^6.4.0",
+    "massive": "^6.6.2"
+  }
+}
