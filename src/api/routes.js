@@ -50,7 +50,7 @@ module.exports = (server, handlers, validations) => {
 
     server.route({
         method: 'PUT',
-        path: '/conversation/close',
+        path: '/conversations/close',
         config: {
             handler: handlers.convHandlers.closeConv,
             notes: 'Close a conversation by changing its status to false, which corresponds to closed',

@@ -1,16 +1,21 @@
 'use strict';
 
+const Boom = require("@hapi/boom");
+
 module.exports = (models) => {
 
     return {
         
-        getMessages() {
+        getMessages(req, res) {
             return models.messagesModels
                 .getMessages(req.params.convid)
-                .catch(err => Boom.badImplementation({ message: 'An internal error has occured', data: err }));
+                .catch(err => {
+                    console.log('err');
+                    //return Boom.badImplementation({ message: 'An internal error has occured', data: err })
+                });
         },
 
-        addMessage() {
+        addMessage(req, res) {
             return models.convModels
                 .findConv(req.params.convid)
                 .then(conv => {
@@ -18,7 +23,7 @@ module.exports = (models) => {
                         return Boom.notFound();
                     }
                     return models.messagesModels
-                        .addMessage({ convid: req.params.convid, msg: req.payload.message })
+                        .addMessage({ convid: req.params.convid, msg: req.payload.msg })
                 })
                 .catch(err => Boom.badImplementation({ message: 'An internal error has occured', data: err }));
         }

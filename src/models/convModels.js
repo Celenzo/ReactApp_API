@@ -6,8 +6,8 @@ module.exports = db => {
             return db.conv.find({ status: true });
         },
 
-        findConv(convid) {
-            return db.conv.find({ convid })
+        findConv(id) {
+            return db.conv.findOne({ id })
         },
 
         createConv(name) {
@@ -15,7 +15,7 @@ module.exports = db => {
         },
 
         closeConv(conv) {
-            return db.conv.update(conv);
+            return db.conv.update({ id: conv.id }, { status: conv.status });
         }
     }
 }

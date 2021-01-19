@@ -4,12 +4,14 @@ module.exports = db => {
     return {
 
         getMessages(convid) {
-            return db.messages.find({ convid }, { order: [{ date: 'desc' }]});
+            return db.messages.find({ convid }, { order: [{ field: 'date', direction: 'asc' }]});
         },
 
-        adMessage(msg) {
+        addMessage(msg) {
+            console.log(msg)
             return db.messages.insert(msg);
         }
 
     }
 }
+//
