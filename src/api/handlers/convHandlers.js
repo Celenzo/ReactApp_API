@@ -23,14 +23,11 @@ module.exports = (models) => {
                     if (!conv) {
                         return Boom.notFound();
                     }
-                    conv.status = false;
+                    conv.status = req.payload.status;
                     return models.convModels
                         .closeConv(conv)
                 })
-                .catch(err => {
-                    console.log(err);
-                    return Boom.badImplementation({ message: 'An internal error has occured', data: err })
-                });
+                .catch(err => Boom.badImplementation({ message: 'An internal error has occured', data: err }));
         }
     }
 }

@@ -8,7 +8,6 @@ module.exports = db => {
         },
 
         addMessage(msg) {
-            console.log(msg)
             return db.messages.insert(msg);
         }
 

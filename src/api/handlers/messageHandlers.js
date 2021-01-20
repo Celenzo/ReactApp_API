@@ -9,10 +9,7 @@ module.exports = (models) => {
         getMessages(req, res) {
             return models.messagesModels
                 .getMessages(req.params.convid)
-                .catch(err => {
-                    console.log('err');
-                    //return Boom.badImplementation({ message: 'An internal error has occured', data: err })
-                });
+                .catch(err => Boom.badImplementation({ message: 'An internal error has occured', data: err }));
         },
 
         addMessage(req, res) {
