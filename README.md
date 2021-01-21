@@ -1,11 +1,11 @@
-###API Node JS
+# API Node JS
 
-##Install
+## Install
 
-npm install
-createdb reactappdb
-psql -f tables.sql reactappdb
+1. npm install
+2. createdb reactappdb
+3. psql -f tables.sql reactappdb
 
-##Launch
+## Launch
 
 node server.js
