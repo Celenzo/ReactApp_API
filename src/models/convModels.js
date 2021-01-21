@@ -6,6 +6,10 @@ module.exports = db => {
             return db.conv.find({ status: true });
         },
 
+        getAllConvs() {
+            return db.query(`select * from conv`);
+        },
+
         findConv(id) {
             return db.conv.findOne({ id })
         },

@@ -10,6 +10,12 @@ module.exports = (models) => {
                 .catch(err => Boom.badImplementation({ message: 'An internal error has occured', data: err }));
         },
 
+        getAllConvs(req, res) {
+            return models.convModels
+                .getAllConvs()
+                .catch(err => Boom.badImplementation({ message: 'An internal error has occured', data: err }));
+        },
+
         createConv(req, res) {
             return models.convModels
                 .createConv(req.payload.name)

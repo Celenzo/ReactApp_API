@@ -25,6 +25,17 @@ module.exports = (server, handlers, validations) => {
     });
 
     server.route({
+        method: 'GET',
+        path: '/conversations/all',
+        config: {
+            handler: handlers.convHandlers.getAllConvs,
+            notes: 'Get all conversations, not depending of status',
+            description: 'Get all conversations',
+            tags: ['api']
+        }
+    });
+
+    server.route({
         method: 'POST',
         path: '/conversations',
         config: {
